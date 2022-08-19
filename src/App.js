@@ -4,7 +4,9 @@ import Greetings from "./components/Greetings";
 function App() {
   return (
     <div className="App">
-      
+      <Routes>
+        <Route path="/" element={<Greetings />} />
+      </Routes>
     </div>
   );
 }
