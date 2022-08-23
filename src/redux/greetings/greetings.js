@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GET_GREETING =  'hello-react-front-end/greetings/GET_GREETING';
+const GET_GREETING =  'hello_react_frontend/greetings/GET_GREETING';
 
 const fetchGreetings = (payload) => ({
     type: GET_GREETING,
@@ -10,8 +10,9 @@ const fetchGreetings = (payload) => ({
 const initialState = [];
 
 export const fetchGreetingsApi = () => async (dispatch) => {
-    const getGreetings = axios.get("http://127.0.0.1:3000/api/v1/greetings");
+    const getGreetings = await axios.get("http://127.0.0.1:3000/api/v1/greetings");
     const greeting = getGreetings.data.message
+    console.log(greeting)
     dispatch(fetchGreetings(greeting));
 };
 
